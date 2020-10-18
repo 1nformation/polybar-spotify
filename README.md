@@ -70,3 +70,11 @@ NOTE: The above given play-pause module requires IPC support enabled for its par
   - The length can be configured using `-l` and delay using `-d`.
   - The separators between the infinitely scrolling text can be configured using `--before-text` and `--after-text` parameters.  
   More info about zscroll's parameters can be found in `man zscroll`.    
+
+  ## Fonts
+
+  This module uses Noto Sans Patched Nerd Font for glyphs.
+  It can be downloaded from https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Noto/Sans/complete/Noto%20Sans%20Regular%20Nerd%20Font%20Complete.ttf
+
+  Feel free to use any other fonts though
+
