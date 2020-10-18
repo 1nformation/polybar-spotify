@@ -15,10 +15,12 @@ This polybar module shows details regarding the currently playing song on Spotif
 ```ini
 [module/spotify]
 type = custom/script
+format-offset = 10
 tail = true
-format-prefix = "  "
 format = <label>
-exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+format-background = ${color.shade6}
+format-foreground = ${color.modulefg}
+exec = ~/.config/polybar/scroll_spotify_status.sh
 ```
 
 The controls can be easily configured using the following modules. Again, make sure you have [playerctl](https://github.com/altdesktop/playerctl) installed.
