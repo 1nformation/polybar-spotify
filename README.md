@@ -24,24 +24,34 @@ exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 The controls can be easily configured using the following modules. Again, make sure you have [playerctl](https://github.com/altdesktop/playerctl) installed.
 
 ```ini
-[module/spotify-prev]
-type = custom/script
-exec = echo "玲"
-format = <label>
-click-left = playerctl previous spotify
-
-[module/spotify-play-pause]
+[module/prev]
 type = custom/ipc
-hook-0 = echo ""
-hook-1 = echo "契"
+hook-0 = echo ""
+hook-1 = echo ""
+format-offset = 10
+format-background = ${color.shade6}
+format-foreground = ${color.modulefg}
 initial = 1
-click-left = playerctl play-pause spotify
+click-left = playerctl previous &
 
-[module/spotify-next]
-type = custom/script
-exec = echo "怜"
-format = <label>
-click-left = playerctl next spotify
+[module/pause]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = echo ""
+hook-2 = echo ""
+format-background = ${color.shade6}
+format-foreground = ${color.modulefg}
+initial = 1
+click-left = playerctl play-pause &
+
+[module/next]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = echo ""
+format-background = ${color.shade6}
+format-foreground = ${color.modulefg}
+initial = 1
+click-left = playerctl next &
 ```
 
 NOTE: The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config. Also make sure to replace `polybar bottom` in [get_spotify_status.sh](get_spotify_status.sh) with the name of the parent bar to get the correct pid.
